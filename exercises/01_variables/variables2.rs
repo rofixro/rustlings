@@ -1,6 +1,6 @@
 fn main() {
-    // TODO: Change the line below to fix the compiler error.
-    let x = 10;
+    // TODO: 修改下一行代码，修复编译器错误。
+    let x;
 
     if x == 10 {
         println!("x is ten!");

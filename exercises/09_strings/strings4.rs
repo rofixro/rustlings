@@ -1,4 +1,4 @@
-// Calls of this function should be replaced with calls of `string_slice` or `string`.
+// 对这个函数的调用应该替换为对函数 `string_slice` 或者 `string` 的调用。
 fn placeholder() {}
 
 fn string_slice(arg: &str) {
@@ -9,29 +9,29 @@ fn string(arg: String) {
     println!("{arg}");
 }
 
-// TODO: Here are a bunch of values - some are `String`, some are `&str`.
-// Your task is to replace `placeholder(…)` with either `string_slice(…)`
-// or `string(…)` depending on what you think each value is.
+// TODO: 这里有一堆值 —— 有些是 `String` 类型，有些是 `&str` 类型。
+// 你的任务是根据你认为每个值的类型，将 `placeholder(…)` 替换为 `string_slice(…)` 
+// 或者 `string(…)`。 
 fn main() {
-    string_slice("blue");
+    placeholder("blue");
 
-    string("red".to_string());
+    placeholder("red".to_string());
 
-    string(String::from("hi"));
+    placeholder(String::from("hi"));
 
-    string("rust is fun!".to_owned());
+    placeholder("rust is fun!".to_owned());
 
-    string("nice weather".into());
+    placeholder("nice weather".into());
 
-    string(format!("Interpolation {}", "Station"));
+    placeholder(format!("Interpolation {}", "Station"));
 
     // WARNING: This is byte indexing, not character indexing.
     // Character indexing can be done using `s.chars().nth(INDEX)`.
-    string_slice(&String::from("abc")[0..1]);
+    placeholder(&String::from("abc")[0..1]);
 
-    string_slice("  hello there ".trim());
+    placeholder("  hello there ".trim());
 
-    string("Happy Monday!".replace("Mon", "Tues"));
+    placeholder("Happy Monday!".replace("Mon", "Tues"));
 
-    string("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    placeholder("mY sHiFt KeY iS sTiCkY".to_lowercase());
 }

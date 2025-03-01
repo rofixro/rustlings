@@ -1,18 +1,15 @@
 struct ColorRegularStruct {
-    // TODO: Add the fields that the test `regular_structs` expects.
-    // What types should the fields have? What are the minimum and maximum values for RGB colors?
-    red: u8,
-    green: u8,
-    blue: u8,
-}
+    // TODO: 添加字段(fields)，使其能够通过测试 `regular_structs`。
+    // 这些字段应具有什么类型？ RGB颜色值的最小值和最大值是多少？
+}   
 
-struct ColorTupleStruct(u8, u8, u8);
+struct ColorTupleStruct(/* TODO: 添加字段(fields)，使其能够通过测试 `tuple_structs` */);
 
 #[derive(Debug)]
 struct UnitStruct;
 
 fn main() {
-    // You can optionally experiment here.
+    // (可选)你可以选择性地在此处进行试验。
 }
 
 #[cfg(test)]
@@ -21,12 +18,8 @@ mod tests {
 
     #[test]
     fn regular_structs() {
-        // TODO: Instantiate a regular struct.
-        let green = ColorRegularStruct {
-            red: 0,
-            green: 255,
-            blue: 0,
-        };
+        // TODO: 实例化(Instantiate)一个普通结构体。
+        // let green =
 
         assert_eq!(green.red, 0);
         assert_eq!(green.green, 255);
@@ -35,8 +28,8 @@ mod tests {
 
     #[test]
     fn tuple_structs() {
-        // TODO: Instantiate a tuple struct.
-        let green = ColorTupleStruct(0, 255, 0);
+        // TODO: 实例化一个元组结构体。
+        // let green =
 
         assert_eq!(green.0, 0);
         assert_eq!(green.1, 255);
@@ -45,8 +38,8 @@ mod tests {
 
     #[test]
     fn unit_structs() {
-        // TODO: Instantiate a unit struct.
-        let unit_struct = UnitStruct;
+        // TODO: 实例化一个单元结构体。
+        // let unit_struct =
         let message = format!("{unit_struct:?}s are fun!");
 
         assert_eq!(message, "UnitStructs are fun!");

@@ -1,10 +1,8 @@
-// You can bring module paths into scopes and provide new names for them with
-// the `use` and `as` keywords.
-
+// 你可以使用 `use` 和 `as` 关键字将模块路径引入作用域并为它们取个新名称(别名)。
 mod delicious_snacks {
-    // TODO: Add the following two `use` statements after fixing them.
-    pub use self::fruits::PEAR as fruit;
-    pub use self::veggies::CUCUMBER as veggie;
+    // TODO: 在修复以下两条 `use` 语句后将它们添加到作用域。
+    // use self::fruits::PEAR as ???;
+    // use self::veggies::CUCUMBER as ???;
 
     mod fruits {
         pub const PEAR: &str = "Pear";

@@ -1,0 +1,737 @@
+# The format version is an indicator of the compatibility of third-party exercises with the
+# Rustlings program.
+# The format version is not the same as the version of the Rustlings program.
+# In case Rustlings makes an unavoidable breaking change to the expected format of third-party
+# exercises, you would need to raise this version and adapt to the new format.
+# Otherwise, the newest version of the Rustlings program won't be able to run these exercises.
+format_version = 1
+
+# Optional multi-line message to be shown to users when just starting with the exercises.
+welcome_message = """
+'                      __  ___                 
+'     _______  _______/ /_/ (_)___  ____ ______
+'    / ___/ / / / ___/ __/ / / __ \\/ __ `/ ___/     ~
+'   / /  / /_/ (__  ) /_/ / / / / / /_/ (__  )     ___
+'  /_/   \\__,_/____/\\__/_/_/_/ /_/\\__, /____/     ['_']  
+'                                /____/       /=) zh-CN (=\\  
+'                                                 -----
+'                                                 || ||
+'                                                 ~~ ~~
+"""
+
+# Optional multi-line message to be shown to users after finishing all exercises.
+final_message = """+----------------------------------------------------+
+        ~
+      ['_']  
+  /=) zh-CN (=\\  >>干得漂亮，休息一会吧~
+      -----
+      || ||
+      ~~ ~~
+"""
+
+# Repeat this section for every exercise.
+[[exercises]]
+# Exercise name which is the exercise file name without the `.rs` extension.
+name = "intro1"
+
+# Optional directory name to be provided if you want to organize exercises in directories.
+# If `dir` is specified, the exercise path is `exercises/DIR/NAME.rs`
+# Otherwise, the path is `exercises/NAME.rs`
+dir = "00_intro"
+
+# Rustlings expects the exercise to contain tests and run them.
+# You can optionally disable testing by setting `test` to `false` (the default is `true`).
+# In that case, the exercise will be considered done when it just successfully compiles.
+test = false
+
+# Rustlings will always run Clippy on exercises.
+# You can optionally set `strict_clippy` to `true` (the default is `false`) to only consider
+# the exercise as done when there are no warnings left.
+# strict_clippy = false
+
+# A multi-line hint to be shown to users on request.
+hint = """在终端键入`n`并回车进入下一个练习。"""
+skip_check_unsolved = true
+
+[[exercises]]
+name = "intro2"
+dir = "00_intro"
+test = false
+hint = """提供打印功能的宏是`printline!`吗？看看编译器提示了什么"""
+
+[[exercises]]
+name = "variables1"
+dir = "01_variables"
+test = false
+hint = """声明变量并赋值的操作中，是不是少了什么用来绑定值的关键字"""
+
+[[exercises]]
+name = "variables2"
+dir = "01_variables"
+test = false
+hint = """编译器的消息表明，Rust无法从代码中推断出变量`x`所具有的类型。
+要是在`main`函数的第一行添加类型注解会怎样呢？
+如果给`x`赋予一个值又会如何呢？
+要是这两件事都做了，又会变成什么样呢？
+另外，`x`应该是什么类型呢？
+要是`x`和`10`是相同类型会怎样？如果是不同类型又会怎样呢？ """
+
+[[exercises]]
+name = "variables3"
+dir = "01_variables"
+test = false
+hint = """你正在试图使用已创建但未赋值的变量？
+这类错误在编程语言中是经常出现的(值得庆幸的是，Rust编译器发现了这个错误)。 """
+
+[[exercises]]
+name = "variables4"
+dir = "01_variables"
+test = false
+hint = """在Rust中，变量默认是不可变(immutable)的。
+但这里我们需要给变量赋另外一个值，即改变这个变量。
+所以在声明变量时要在变量名前加上什么关键字使其可变(mutable)呢？ """
+
+[[exercises]]
+name = "variables5"
+dir = "01_variables"
+test = false
+hint = """在 `variables4` 中，我们学习了如何使用特定关键字来修改变量可变性。
+不过，在这个练习里，那种方法没什么用处。
+这是因为这次我们想要给现有的变量名赋予不同的类型。而且有时候可能也会希望重新使用相同的变量名（比如仅仅稍微改变一下变量里面内容的类型等情况）。
+为了应对这样的状况，在 Rust 中有 `变量遮蔽(Shadowing)` 这种方法。
+变量遮蔽在 The Rust Book 中有详细讲解:
+https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html#shadowing"""
+
+[[exercises]]
+# Exercise name which is the exercise file name without the `.rs` extension.
+name = "variables6"
+dir = "01_variables"
+test = false
+hint = """到目前为止，我们已经了解了变量和可变性相关的知识，不过Rust中还存在一种重要的类型叫做常量。
+常量始终是不可变的，并且使用 `const` 关键字进行声明。
+值得注意的是，常量的类型在代码中总是需要明确地进行声明。
+关于变量和常量的区别，在 The Rust Book 中有详细讲解：
+https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html#constants"""
+
+[[exercises]]
+name = "functions1"
+dir = "02_functions"
+test = false
+hint = """在`main`函数内调用了`call_me`函数，然而该函数在代码中并不存在。
+而且代码推测这个函数不需要参数，也没有返回值，这和`main`函数挺相似的呢。"""
+
+[[exercises]]
+name = "functions2"
+dir = "02_functions"
+test = false
+hint = """在Rust中，函数的签名(用来描述函数输入输出的部分)里类型声明是必需的。
+对于`call_me`函数来说，它缺少了什么呢？"""
+
+[[exercises]]
+name = "functions3"
+dir = "02_functions"
+test = false
+hint = """函数的声明本身没有问题，不过函数的调用方式似乎存在问题。"""
+
+[[exercises]]
+name = "functions4"
+dir = "02_functions"
+test = false
+hint = """错误消息指出在`sale_price`函数中 “->” 之后没有写明返回值的类型。参考一下`is_even`函数吧。"""
+
+[[exercises]]
+name = "functions5"
+dir = "02_functions"
+test = false
+hint = """Rust区分表达式和语句。
+表达式返回与操作对象对应的值，语句仅返回`()`空空如也。
+`square`函数应该返回`i32`，但是却返回了`()`。
+仔细看看`square`函数的代码吧。"""
+
+[[exercises]]
+name = "if1"
+dir = "03_if"
+hint = """你也可以用一行代码来实现想要执行的操作哦。
+在Rust语言里需要记住以下几点:
+- `if` 语句的条件是不需要用圆括号之类的符号括起来的。
+- `if` 和 `else` 是表达式。
+- 在条件表达式后面通常会跟着 `{}` 代码块。 """
+
+[[exercises]]
+name = "if2"
+dir = "03_if"
+hint = """请考虑`在Rust中每个条件块需要返回 相同类型 的值`这一点来修改代码哦。
+关于测试期望的内容，请阅读测试用例中`传入了什么，期待返回什么`。"""
+
+[[exercises]]
+name = "if3"
+dir = "03_if"
+hint = """请考虑`在Rust中每个条件块需要返回 相同类型 的值`这一点来修改代码哦。"""
+
+[[exercises]]
+name = "quiz1"
+dir = "quizzes"
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "quiz2"
+dir = "quizzes"
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "quiz3"
+dir = "quizzes"
+hint = """要解决这个练习，特性（trait）知识，特别是特性边界语法知识是必不可少的。
+https://doc.rust-lang.org/stable/book/ch10-02-traits.html#using-trait-bounds-to-conditionally-implement-methods
+以下是在实现块中指定特性边界的方法:
+`impl<T: Trait1 + Trait2 + …> for Foo<T> { … }`
+可能需要`use std::fmt::Display;`。"""
+
+[[exercises]]
+name = "primitive_types1"
+dir = "04_primitive_types"
+test = false
+hint = """将运算符`!`置于布尔值之前，可以去否布尔值。
+例如: `!true == false`
+这也可以用值为false的布尔型变量。"""
+
+[[exercises]]
+name = "primitive_types2"
+dir = "04_primitive_types"
+test = false
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "primitive_types3"
+dir = "04_primitive_types"
+test = false
+hint = """在Rust中，有一种以特定大小初始化数组的便捷方法:
+`let nums = [6; 99999];`
+这是一个长度为99999的数组，每个元素都是6。
+什么？你说你这样也可以: `let nums = [6, 6, 6, ..., 6, 6];`
+你是个狠人...
+"""
+
+[[exercises]]
+name = "primitive_types4"
+dir = "04_primitive_types"
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "primitive_types5"
+dir = "04_primitive_types"
+test = false
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "primitive_types6"
+dir = "04_primitive_types"
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "vecs1"
+dir = "05_vecs"
+hint = """在Rust中，有两种定义动态数组(vector)的方法:
+1. 使用 `Vec::new()` 函数 创建一个新的动态数组，然后通过 `push` 方法向其中添加元素。
+2. 使用 `vec![]` 宏 定义并初始化元素(如果知道初始值，使用这个方法会更简单)。
+
+更多详细信息，请参考The Rust Book:
+https://doc.rust-lang.org/stable/book/ch08-01-vectors.html """
+
+[[exercises]]
+name = "vecs2"
+dir = "05_vecs"
+hint = """在第一个函数中，先创建了一个空的动态数组，然后向其中添加(push)元素。
+在第二个函数中，对输入的值进行映射(map)，然后将结果收集(collect)到动态数组中。
+请尝试编写这两个函数，看看你更喜欢哪种方法。
+顺便一提，我更喜欢第二种方式，因为我觉得它更rusty，更优雅 ;) """
+
+[[exercises]]
+name = "move_semantics1"
+dir = "06_move_semantics"
+hint = """向`vec`推送元素意味着要改变它，但默认所有变量是不可变的，所以要想解决这个问题， 我们应该怎么声明`vec`呢？"""
+
+[[exercises]]
+name = "move_semantics2"
+dir = "06_move_semantics"
+hint = """在初次运行这个练习的时候，你有没有注意到有`对已移动的值进行借用`这样的错误呢？
+在Rust中，当参数被传递给函数，并且其值没有被显式返回时，原来的变量就无法再被使用了。
+也就是说，当把`vec0`传递给`fill_vec`时，所有权会转移到`vec1`那里，所以就没办法再访问`vec0`了。
+如果想要解决这个问题的话，就需要创建`vec0`的克隆，然后将这个克隆传递给`fill_vec`。 """
+
+[[exercises]]
+name = "move_semantics3"
+dir = "06_move_semantics"
+hint = """与之前的练习的区别在于，`fill_vec`函数开头处原有的`let mut vec = vec`这部分内容消失了。
+取而代之的是，在已有数组进行初始定义的时候添加`mut`关键字吧。"""
+
+[[exercises]]
+name = "move_semantics4"
+dir = "06_move_semantics"
+hint = """请仔细考虑可变引用的作用域范围。当获取可变引用时修改`x`的值会有什么作用呢？
+关于可变变量的引用，请参考The Rust Book:
+https://doc.rust-lang.org/stable/book/ch04-02-references-and-borrowing.html """
+
+[[exercises]]
+name = "move_semantics5"
+dir = "06_move_semantics"
+test = false
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "structs1"
+dir = "07_structs"
+hint = """Rust中有三种结构体，每种结构体都用于将相关数据组合在一起。
+常规结构体存储`数据`以及`数据对应的名称`，这些被称为`字段`(fields)。
+元组结构体就像是有名字的元组，每个字段没有独特的名称。
+单元样结构体没有字段，作为泛型使用时较为方便。
+在这个练习题中，需要实现所有类型的结构体，请参考  The Rust Book
+https://doc.rust-lang.org/stable/book/ch05-01-defining-structs.html """
+
+[[exercises]]
+name = "structs2"
+dir = "07_structs"
+hint = """创建结构体的实例很简单，只需给定每个字段即可。
+此外，在进行实例化时还有一些快捷的方式，详情请查看The Rust Book:
+https://doc.rust-lang.org/stable/book/ch05-01-defining-structs.html#creating-instances-from-other-instances-with-struct-update-syntax """
+
+[[exercises]]
+name = "structs3"
+dir = "07_structs"
+hint = """在`is_international`函数中，可能需要确认包裹的目的地、出发地或者运输过程中涉及的国家等信息来判断是否为国际包裹，经停地看起来确实可能相关。
+在`get_fees`函数中，需要额外的参数，而`Package`结构体中可能需要包含与包裹重量、尺寸、运输类型（是否加急等）、目的地等相关的字段，这些信息会影响费用的计算。
+如果想详细了解方法的实现，可以查看The Rust Book:
+https://doc.rust-lang.org/stable/book/ch05-03-method-syntax.html 。"""
+
+[[exercises]]
+name = "enums1"
+dir = "08_enums"
+test = false
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "enums2"
+dir = "08_enums"
+test = false
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "enums3"
+dir = "08_enums"
+hint = """第一步，先定义枚举类型，确保不会出现错误。
+接下来，在 `process()` 函数中创建 `match` 表达式。请注意，为了获取枚举中的值，需要使用 `match` 表达式进行解构。"""
+
+[[exercises]]
+name = "strings1"
+dir = "09_strings"
+test = false
+hint = """`current_favorite_color` 函数返回的是具有 `static`(静态)生命周期的切片。
+由于字符串数据是嵌入在代码中的，所以只要代码在运行，该数据就会一直存在。
+虽然，字符串切片与 `String` 类型是不同的，但可以通过使用 `From` 进行类型转换。 """
+
+[[exercises]]
+name = "strings2"
+dir = "09_strings"
+test = false
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "strings3"
+dir = "09_strings"
+hint = """字符串的标准库中有一些很方便的功能:
+https://doc.rust-lang.org/std/string/struct.String.html#method.trim
+`compose_me`: 可以使用`format!`宏，或者将字符串切片转换为拥有所有权的字符串，关于可以自由扩展的`replace_me`，请参考`replace`方法:
+https://doc.rust-lang.org/std/string/struct.String.html#method.replace"""
+
+[[exercises]]
+name = "strings4"
+dir = "09_strings"
+test = false
+hint = """请将 `main` 函数中的 `placeholder` 替换为 `string` 或 `string_slice` 函数。
+例如，`placeholder("blue");` 应该替换为 `string_slice("blue");`。
+因为 `"blue"` 部分是 `&str` 类型。"""
+
+[[exercises]]
+name = "modules1"
+dir = "10_modules"
+test = false
+hint = """在Rust中，默认情况下大多数东西都是私有访问的。不过，可以用`pub`关键字使其可公开使用 """
+
+[[exercises]]
+name = "modules2"
+dir = "10_modules"
+test = false
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "modules3"
+dir = "10_modules"
+test = false
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "hashmaps1"
+dir = "11_hashmaps"
+hint = """水果的数量至少要有5个，而且必须放入至少3种水果。"""
+
+[[exercises]]
+name = "hashmaps2"
+dir = "11_hashmaps"
+hint = """我们使用哈希表的`entry`和`or_insert`方法。
+有关详细信息，请参阅The Rust Book:
+https://doc.rust-lang.org/stable/book/ch08-03-hash-maps.html#adding-a-key-and-value-only-if-a-key-isnt-present"""
+
+[[exercises]]
+name = "hashmaps3"
+dir = "11_hashmaps"
+hint = """提示1:
+使用哈希表的`entry`和`or_insert`(或 `or_insert_with`)方法，在球队不存在于表格中时插入`TeamScores`的默认值。
+更多详细信息，请参考The Rust Book:
+https://doc.rust-lang.org/stable/book/ch08-03-hash-maps.html#adding-a-key-and-value-only-if-a-key-isnt-present
+
+提示2:
+确保当给定的键已经存在时，能够根据已设置的值进行更新。
+更多详细信息，请参考The Rust Book:
+https://doc.rust-lang.org/stable/book/ch08-03-hash-maps.html#updating-a-value-based-on-the-old-value"""
+
+[[exercises]]
+name = "options1"
+dir = "12_options"
+hint = """Option类型可以拥有Some值及其内部的值，也可以是内部值为None的类型。有多种获取内部值的方法，可以使用`unwrap`或者模式匹配。
+使用unwrap虽然简单，但是如果出现问题就会导致程序崩溃(panic)，那么为了不让程序强制退出应该怎么做呢?"""
+
+[[exercises]]
+name = "options2"
+dir = "12_options"
+hint = """请参考以下示例:
+- https://doc.rust-lang.org/rust-by-example/flow_control/if_let.html 
+- https://doc.rust-lang.org/rust-by-example/flow_control/while_let.html 
+切记，Option类型可以嵌套在`if let`和`while let`语句中。
+例如，“if let Some(Some(x)) = y”，也可以参考Option::flatten。"""
+
+[[exercises]]
+name = "options3"
+dir = "12_options"
+test = false
+hint = """编译器提示发生了部分所有权的转移，让我们看看编译器的错误提示吧。
+按照编译器的指示进行修正后，请阅读相关文档:
+https://doc.rust-lang.org/std/keyword.ref.html"""
+
+[[exercises]]
+name = "errors1"
+dir = "13_error_handling"
+hint = """`generate_nametag_text` 函数不应该返回 `Option` 类型，而应该返回带有 `Ok` 或 `Err` 类型的 `Result` 类型。
+要进行此更改，需要以下操作:
+- 将函数签名的返回值设置为 `Result<String, String>`。
+- 将返回 `Some()` 的函数体部分更改为返回 `Ok()`。
+- 将返回 `None` 的地方更改为返回 `Err(错误消息)`。 """
+
+[[exercises]]
+name = "errors2"
+dir = "13_error_handling"
+hint = """处理这个问题的方法中，有一种是在 `item_quantity` 上使用 `match` 语句。另外，使用 `?` 运算符也可以实现类似效果。
+更多详细信息，请查看The Rust Book:
+https://doc.rust-lang.org/stable/book/ch09-02-recoverable-errors-with-result.html#a-shortcut-for-propagating-errors-the--operator"""
+
+[[exercises]]
+name = "errors3"
+dir = "13_error_handling"
+test = false
+hint = """如果其他函数可以返回 `Result` 类型，那么为什么只有 `main` 函数不能返回呢？实际上，`main` 函数返回 `Result<(), ErrorType>` 是一种常见的惯例。`Ok` 里面包含 `()` 是因为在没有问题的结果情况下，特别地不需要返回任何东西。"""
+
+[[exercises]]
+name = "errors4"
+dir = "13_error_handling"
+hint = """`PositiveNonzeroInteger::new` 总是会创建新的实例并返回值。然而，如果在实例创建时检查失败，它将返回 `Err`(如果没有问题则返回 `Ok`)。"""
+
+[[exercises]]
+name = "errors5"
+dir = "13_error_handling"
+test = false
+hint = """在 `main` 函数内生成了两种不同的 `Result` 类型，它们使用 `?` 来传递信息。那么应该如何限制 `main` 函数的返回值类型以同时允许这两种情况呢？
+在 `?` 运算符处理的背后，会对错误值调用 `From::from`，将其转换为装箱后的特征对象 `Box<dyn Error>`。由于所有错误都实现了 `Error` 特征，所以可以将各种不同的错误包含在一个 `Box` 对象中。
+关于boxing_errors，请参考The Rust Book:
+https://doc.rust-lang.org/stable/rust-by-example/error/multiple_error_types/boxing_errors.html 
+也可以阅读关于如何使用boxing_errors的 `?` 运算符:
+https://doc.rust-lang.org/rust-by-example/error/multiple_error_types/boxing_errors.html"""
+
+[[exercises]]
+name = "errors6"
+dir = "13_error_handling"
+hint = """在这个练习中，我们将使用前一个练习中使用过的 `PositiveNonzeroInteger`。在 `TODO` 要求更改的行下面，有一个使用 `Result` 的 `map_err` 方法将一种类型的错误转换为另一种类型错误的示例。
+请在 `parse` 的 `Result` 上尝试同样的操作。使用 `?` 运算符可以提前 `return` 的位置。
+关于 `map_err`，请参考 The Rust Book:
+https://doc.rust-lang.org/std/result/enum.Result.html#method.map_err """
+
+[[exercises]]
+name = "generics1"
+dir = "14_generics"
+test = false
+hint = """Rust的动态数组利用泛型创建了能容纳任意类型、具有动态大小的数组。
+如果有一个名为 `numbers` 的向量，其类型为 `Vec<T>`，那么就只能推送 `T` 类型的元素。在推送之前，通过使用 `into` 可以让编译器将 `n1` 和 `n2` 转换为 `T` 类型。然而，编译器并不知道 `T` 的具体类型，所以需要对该类型进行注释。
+`u8` 和 `i8` 类型可以转换为 `i16`、`i32`、`i64` 等类型。让我们来选择动态数组的泛型类型吧。 """
+
+[[exercises]]
+name = "generics2"
+dir = "14_generics"
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "traits1"
+dir = "15_traits"
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "traits2"
+dir = "15_traits"
+hint = """请注意，特征获取了`self`的所有权，并将`Self`作为返回值。
+在特征中，`append_bar`的函数签名将`self`作为参数来接收，但在具体实现时，可以改为接收 `mut self`。这是因为无论如何值都是被拥有的，所以这样做是可行的。 """
+
+[[exercises]]
+name = "traits3"
+dir = "15_traits"
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "traits4"
+dir = "15_traits"
+hint = """可以使用特征(trait)来代替具体类型的参数。请尝试将 `???` 替换为 `impl [这里应该填入什么?]`。
+The Rust Book的相应章节:
+https://doc.rust-lang.org/stable/book/ch10-02-traits.html#traits-as-parameters"""
+
+[[exercises]]
+name = "traits5"
+dir = "15_traits"
+hint = """要约束参数实现了多个特征，可以使用 `+` 语法。请尝试将 `???` 替换为 `impl [这里填入第一个特征名称] + [这里填入第二个特征名称]`。
+The Rust Book的相应章节:
+https://doc.rust-lang.org/stable/book/ch10-02-traits.html#specifying-multiple-trait-bounds-with-the--syntax"""
+
+[[exercises]]
+name = "lifetimes1"
+dir = "16_lifetimes"
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "lifetimes2"
+dir = "16_lifetimes"
+test = false
+hint = """请注意，生命周期 `a` 实际等同于 `x` 和 `y` 中较小那一方的具体生命周期。
+为了在保留内部块的情况下获得符合预期的结果，有两种方法:
+1. 移动`string2`的声明语句，使其与`string1`具有相同的长度生命周期(那么`result`会是如何声明的呢?)
+2. 将`println!`语句移到内部块中。 """
+
+[[exercises]]
+name = "lifetimes3"
+dir = "16_lifetimes"
+test = false
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "tests1"
+dir = "17_tests"
+hint = """`assert!` 是一个需要参数的宏。它会根据参数的值来决定是不做任何操作(测试通过)还是触发恐慌(测试失败)。
+所以，我们可以给 `assert!` 传入各种各样的值，看看哪些会成功、哪些会失败哦。
+如果想要测试 `false` 的情况，可以像 `assert!(!...)` 这样通过添加 `!` 来进行测试呢。 """
+
+[[exercises]]
+name = "tests2"
+dir = "17_tests"
+hint = """`assert_eq!` 是一个接收两个参数并进行比较的宏。
+请试着传入相同的值来运行看看。要是传入不同的值会怎么样呢？把参数的顺序调换一下又会怎样呢?"""
+
+[[exercises]]
+name = "tests3"
+dir = "17_tests"
+hint = """在测试中，我们期望 `Rectangle::new` 函数在接收到负值时会引发恐慌。
+为此，需要向测试函数添加一个特殊的属性。
+请参考Rust书籍中的以下内容:
+https://doc.rust-lang.org/stable/book/ch11-01-writing-tests.html#checking-for-panics-with-should_panic"""
+
+[[exercises]]
+name = "iterators1"
+dir = "18_iterators"
+hint = """迭代器(iterator)会对集合内的所有元素执行一系列操作，要是元素都处理完了该怎么办呢?
+请查看以下文档:
+https://doc.rust-lang.org/std/iter/trait.Iterator.html"""
+
+[[exercises]]
+name = "iterators2"
+dir = "18_iterators"
+hint = """`capitalize_first`: 变量`first`是`char`类型。要返回正确的`String`，需要将这个字符转换为大写并添加到`chars`的其余字符中。`chars`的其余字符可以使用`as_str`方法作为字符串切片显示。
+`chars`的文档中有许多方便的方法:
+https://doc.rust-lang.org/std/primitive.char.html 
+使用`char::to_uppercase`。它返回一个可以转换为`String`的迭代器。
+`capitalize_words_vector`: 从切片创建一个迭代器。
+应用`capitalize_first`函数转换迭代器的值。不要忘记收集迭代器。
+`capitalize_words_string`: 可以用与之前相同的方法解决。
+`collect`非常强大且通用。Rust只需要知道你的目的，就会进行适当的处理。"""
+
+[[exercises]]
+name = "iterators3"
+dir = "18_iterators"
+hint = """`divide`函数在除数为0或者不能进行整除的情况下，需要返回正确的错误。
+`division_results`变量需要作为集合类型来收集计算结果。
+`result_with_list`函数需要返回单个`Result`，成功时返回整数向量，失败时返回`DivisionError`。
+`list_of_results`函数需要返回结果向量。
+关于`FromIterator`在`collect`中是如何被使用的，请参考以下文档。这个特性非常强大，能让这个练习更容易解决。
+https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.collect"""
+
+[[exercises]]
+name = "iterators4"
+dir = "18_iterators"
+hint = """在命令式编程语言中，可能会编写更新变量的`for`循环。或者，可能会编写使用递归和`match`的代码。
+在Rust中，可以采用另一种函数式方法，通过使用范围和迭代器来优雅地解决阶乘问题。查看一下`fold`方法和`rfold`吧。"""
+
+[[exercises]]
+name = "iterators5"
+dir = "18_iterators"
+hint = """`std::iter::Iterator` trait的文档中记载了许多在此处有用的方法。
+`count_collection_iterator`函数中的`collection`变量是`HashMap`的切片，为了使用迭代器的方法，需要将其转换为迭代器。
+`fold`方法在`count_collection_iterator`函数中很有用。
+如果想要进一步挑战，参考`Iterator`的文档，寻找一个比使用`fold`更能使代码简洁的其他方法吧！"""
+
+[[exercises]]
+name = "box1"
+dir = "19_smart_pointers"
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "rc1"
+dir = "19_smart_pointers"
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "arc1"
+dir = "19_smart_pointers"
+test = false
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "cow1"
+dir = "19_smart_pointers"
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "threads1"
+dir = "20_threads"
+test = false
+hint = """`JoinHandle`是从生成的线程返回的结构体。
+https://doc.rust-lang.org/std/thread/fn.spawn.html 
+多线程应用程序的问题在于，生成的线程在结束之前，主线程有可能先结束。使用`JoinHandle`等待每个线程结束，并收集结果。"""
+
+[[exercises]]
+name = "threads2"
+dir = "20_threads"
+test = false
+hint = """`Arc`是原子引用计数指针，它允许对不可变数据进行安全的共享访问。
+然而，在本次练习中，我们想要更改`jobs_done`的值，因此需要使用另一种类型，该类型一次只允许一个线程更改数据。
+让我们查看 The Rust Book的以下部分:
+https://doc.rust-lang.org/stable/book/ch16-03-shared-state.html#using-mutexes-to-allow-access-to-data-from-one-thread-at-a-time"""
+
+[[exercises]]
+name = "threads3"
+dir = "20_threads"
+hint = """作为处理线程间并发执行的另一种方法，存在使用 mpc(多生产者、单消费者通道)通道进行通信的方式。只要有发送端和接收端，就可以在某个线程中发送值，并在另一个线程中接收该值。通过使用`clone`来创建原始接收端的副本，能够创建多个生产者。
+The Rust Book的相关章节:
+https://doc.rust-lang.org/stable/book/ch16-02-message-passing.html """
+
+[[exercises]]
+name = "macros1"
+dir = "21_macros"
+test = false
+hint = """在Rust中调用宏时，与普通的函数调用相比，需要添加特殊的字符。"""
+
+[[exercises]]
+name = "macros2"
+dir = "21_macros"
+test = false
+hint = """Rust中的宏并不完全遵循与编写普通函数相同的规则。
+“宏的定义位置”以及“宏的使用位置的先后顺序”很重要。"""
+
+[[exercises]]
+name = "macros3"
+dir = "21_macros"
+test = false
+hint = """要在模块外部使用宏，需要对模块进行特殊处理，将宏导出到父目录中。"""
+
+[[exercises]]
+name = "macros4"
+dir = "21_macros"
+test = false
+hint = """只需添加一个字符就能使其成功编译。宏的编写方式是通过在每个宏分支之间添加某些内容，从而能够将它们分隔开。至此，宏的练习就结束了，但这仅仅只是介绍了一小部分内容。
+若想获取更详细的宏知识，请阅读 The Little Book of Rust Macros:
+https://veykril.github.io/tlborm/"""
+
+[[exercises]]
+name = "clippy1"
+dir = "22_clippy"
+test = false
+hint = """Rust的标准库中存储了长精度和无限精度的数学常数:
+https://doc.rust-lang.org/stable/std/f32/consts/index.html 
+在某些情况下，可能想要使用某种数学常数的自定义近似值，但Clippy会将不准确的数学常数视为潜在错误的原因。请参考编译输出中的Clippy警告，从 `std::f32::consts` 中使用合适的替换常数。"""
+
+[[exercises]]
+name = "clippy2"
+dir = "22_clippy"
+test = false
+hint = """针对`Option`类型的`for`循环可以用`if-let`语句来表示。"""
+skip_check_unsolved = true
+
+[[exercises]]
+name = "clippy3"
+dir = "22_clippy"
+test = false
+hint = """此练习还暂无提示哦
+(需要点提示? 提出问题到 https://github.com/SandmeyerX/rustlings-zh-cn/issues)"""
+
+[[exercises]]
+name = "using_as"
+dir = "23_conversions"
+hint = """请使用`as`运算符将`average`函数最后一行的操作数之一更改为期望的返回值类型。"""
+
+[[exercises]]
+name = "from_into"
+dir = "23_conversions"
+hint = """请按照在`From`之前刚刚实现的步骤来进行操作。"""
+
+[[exercises]]
+name = "from_str"
+dir = "23_conversions"
+hint = """在`FromStr`的实现中，需要指定`Person`对象并返回`Ok`，如果字符串不符合要求则指定相应错误并返回`Err`。这与 `from_into` 的练习大致相同，不过这里是返回错误而不是返回默认值。
+另一个提示:
+可以使用 `Result` 的 `map_err` 方法以及在闭包中使用它来包装从 `parse::<u8>` 产生的错误。
+还有一个提示:
+如果想要利用 `?` 运算符来传播错误，请参考以下内容:
+https://doc.rust-lang.org/stable/rust-by-example/error/multiple_error_types/reenter_question_mark.html """
+
+[[exercises]]
+name = "try_from_into"
+dir = "23_conversions"
+hint = """标准库中是否存在既能进行`TryFrom`实现所需的整数转换，又能进行输入范围检查的东西呢?
+挑战: 能否针对很多整数类型通用地实现 `TryFrom` 呢? """
+
+[[exercises]]
+name = "as_ref_mut"
+dir = "23_conversions"
+hint = """让我们将`AsRef<str>`或`AsMut<u32>`作为绑定到函数的特性来添加吧。"""

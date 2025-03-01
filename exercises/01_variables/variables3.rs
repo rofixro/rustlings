@@ -1,6 +1,6 @@
 fn main() {
-    // TODO: Change the line below to fix the compiler error.
-    let x: i32 = 10;
+    // TODO: 修改下一行代码，修复编译器错误。
+    let x: i32;
 
     println!("Number {x}");
 }

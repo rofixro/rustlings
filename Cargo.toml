@@ -1,3 +1,4 @@
+# Don't edit the `bin` list manually! It is updated by `rustlings dev update`
 bin = [
   { name = "intro1", path = "exercises/00_intro/intro1.rs" },
   { name = "intro1_sol", path = "solutions/00_intro/intro1.rs" },
@@ -33,6 +34,10 @@ bin = [
   { name = "if3_sol", path = "solutions/03_if/if3.rs" },
   { name = "quiz1", path = "exercises/quizzes/quiz1.rs" },
   { name = "quiz1_sol", path = "solutions/quizzes/quiz1.rs" },
+  { name = "quiz2", path = "exercises/quizzes/quiz2.rs" },
+  { name = "quiz2_sol", path = "solutions/quizzes/quiz2.rs" },
+  { name = "quiz3", path = "exercises/quizzes/quiz3.rs" },
+  { name = "quiz3_sol", path = "solutions/quizzes/quiz3.rs" },
   { name = "primitive_types1", path = "exercises/04_primitive_types/primitive_types1.rs" },
   { name = "primitive_types1_sol", path = "solutions/04_primitive_types/primitive_types1.rs" },
   { name = "primitive_types2", path = "exercises/04_primitive_types/primitive_types2.rs" },
@@ -91,8 +96,6 @@ bin = [
   { name = "hashmaps2_sol", path = "solutions/11_hashmaps/hashmaps2.rs" },
   { name = "hashmaps3", path = "exercises/11_hashmaps/hashmaps3.rs" },
   { name = "hashmaps3_sol", path = "solutions/11_hashmaps/hashmaps3.rs" },
-  { name = "quiz2", path = "exercises/quizzes/quiz2.rs" },
-  { name = "quiz2_sol", path = "solutions/quizzes/quiz2.rs" },
   { name = "options1", path = "exercises/12_options/options1.rs" },
   { name = "options1_sol", path = "solutions/12_options/options1.rs" },
   { name = "options2", path = "exercises/12_options/options2.rs" },
@@ -125,8 +128,6 @@ bin = [
   { name = "traits4_sol", path = "solutions/15_traits/traits4.rs" },
   { name = "traits5", path = "exercises/15_traits/traits5.rs" },
   { name = "traits5_sol", path = "solutions/15_traits/traits5.rs" },
-  { name = "quiz3", path = "exercises/quizzes/quiz3.rs" },
-  { name = "quiz3_sol", path = "solutions/quizzes/quiz3.rs" },
   { name = "lifetimes1", path = "exercises/16_lifetimes/lifetimes1.rs" },
   { name = "lifetimes1_sol", path = "solutions/16_lifetimes/lifetimes1.rs" },
   { name = "lifetimes2", path = "exercises/16_lifetimes/lifetimes2.rs" },
@@ -195,28 +196,4 @@ edition = "2021"
 # Don't publish the exercises on crates.io!
 publish = false
 
-[profile.release]
-panic = "abort"
-
-[profile.dev]
-panic = "abort"
-
-[lints.rust]
-# You shouldn't write unsafe code in Rustlings!
-unsafe_code = "forbid"
-# You don't need unstable features in Rustlings and shouldn't rely on them while learning Rust.
-unstable_features = "forbid"
-# Dead code warnings can't be avoided in some exercises and might distract while learning.
-dead_code = "allow"
-
-[lints.clippy]
-# You forgot a `todo!()`!
-todo = "forbid"
-# This can only happen by mistake in Rustlings.
-empty_loop = "forbid"
-# No infinite loops are needed in Rustlings.
-infinite_loop = "deny"
-# You shouldn't leak memory while still learning Rust!
-mem_forget = "deny"
-# Currently, there are no disallowed methods. This line avoids problems when developing Rustlings.
-disallowed_methods = "allow"
+[dependencies]

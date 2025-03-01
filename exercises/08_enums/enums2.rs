@@ -6,12 +6,7 @@ struct Point {
 
 #[derive(Debug)]
 enum Message {
-    // TODO: Define the different variants used below.
-    Resize { width: u32, height: u32 }, // 匿名结构体
-    Move(Point),
-    Echo(String),
-    ChangeColor(u32, u32, u32),
-    Quit,
+    // TODO: 定义下面所使用的不同变体(variants)。
 }
 
 impl Message {
